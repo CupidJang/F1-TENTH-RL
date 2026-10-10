@@ -1,0 +1,82 @@
+seed: 0
+device: cpu
+threads: 2
+render_every: 10
+env:
+  map_dir: f1tenth-riders-quickstart/pkg/src/pkg/maps
+  map: Oschersleben
+  start_poses:
+    Oschersleben:
+    - 0.0702245
+    - 0.3002981
+    - 2.79787
+    SOCHI:
+    - 0.8007017
+    - -0.2753365
+    - 4.1421595
+    SOCHI_OBS:
+    - 0.8007017
+    - -0.2753365
+    - 4.1421595
+  frame_stack: 1
+  action_type: continuous
+  steering_angles:
+  - -0.4
+  - -0.3
+  - -0.2
+  - -0.1
+  - 0.0
+  - 0.1
+  - 0.2
+  - 0.3
+  - 0.4
+  speeds:
+  - 2.0
+  - 3.0
+  - 4.0
+  - 5.0
+  - 6.0
+  - 7.0
+  - 8.0
+  max_steering: 0.4
+  speed_range:
+  - 2.0
+  - 8.0
+  action_repeat: 1
+  time_limit: 300.0
+observation:
+  name: lidar_control
+  num_beams: 108
+  max_range: 10.0
+  max_speed: 8.0
+reward:
+  name: progress
+  collision_penalty: 10.0
+  steer_penalty: 0.1
+  speed_penalty: 0.05
+  lap_bonus: 0.0
+train:
+  total_steps: 2000000
+  random_start: true
+eval:
+  map: null
+  interval: 100000
+  episodes: 1
+  render: false
+agent:
+  name: sac
+  hidden_sizes:
+  - 256
+  - 256
+  gamma: 0.998
+  actor_lr: 0.0003
+  critic_lr: 0.0003
+  alpha_lr: 0.0003
+  alpha: 0.2
+  autotune: true
+  tau: 0.005
+  batch_size: 256
+  learning_starts: 5000
+  train_freq: 4
+  buffer:
+    capacity: 1000000
