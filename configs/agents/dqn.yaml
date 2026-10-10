@@ -1,0 +1,26 @@
+agent:
+  name: dqn
+  double: true
+  dueling: true
+  noisy: false
+  distributional: null
+  n_step: 1
+  hidden_sizes: [256, 256]
+  gamma: 0.998
+  lr: 0.0003
+  batch_size: 64
+  learning_starts: 5000
+  train_freq: 4
+  target_update_interval: 1250
+  tau: null
+  max_grad_norm: 10.0
+  epsilon_start: 1.0
+  epsilon_end: 0.05
+  epsilon_decay_steps: 500000
+  buffer:
+    capacity: 1000000
+    prioritized: false
+    alpha: 0.6
+    beta_start: 0.4
+    beta_end: 1.0
+    beta_steps: 2000000

@@ -1,0 +1,19 @@
+agent:
+  name: dqn
+  distributional: c51
+  num_atoms: 51
+  v_min: -20.0
+  v_max: 40.0
+  hidden_sizes: [256, 256]
+  gamma: 0.998
+  lr: 0.0003
+  batch_size: 64
+  learning_starts: 5000
+  train_freq: 4
+  target_update_interval: 1250
+  max_grad_norm: 10.0
+  epsilon_start: 1.0
+  epsilon_end: 0.05
+  epsilon_decay_steps: 500000
+  buffer:
+    capacity: 1000000

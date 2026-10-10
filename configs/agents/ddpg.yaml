@@ -1,0 +1,16 @@
+env:
+  action_type: continuous
+
+agent:
+  name: ddpg
+  hidden_sizes: [256, 256]
+  gamma: 0.998
+  actor_lr: 0.0003
+  critic_lr: 0.0003
+  tau: 0.005
+  batch_size: 256
+  learning_starts: 5000
+  train_freq: 1
+  exploration_noise: 0.1
+  buffer:
+    capacity: 1000000

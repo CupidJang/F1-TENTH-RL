@@ -1,0 +1,17 @@
+agent:
+  name: ppo
+  hidden_sizes: [64, 64]
+  activation: tanh
+  gamma: 0.998
+  lr: 0.0003
+  rollout_steps: 2048
+  epochs: 10
+  minibatch_size: 64
+  clip_coef: 0.2
+  gae_lambda: 0.99
+  normalize_advantages: true
+  target_kl: null
+  ent_coef: 0.0
+  vf_coef: 0.5
+  max_grad_norm: 0.5
+  log_std_init: 0.0

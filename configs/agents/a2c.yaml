@@ -1,0 +1,12 @@
+agent:
+  name: a2c
+  hidden_sizes: [64, 64]
+  activation: tanh
+  gamma: 0.998
+  lr: 0.0007
+  rollout_steps: 16
+  gae_lambda: 1.0
+  normalize_advantages: false
+  ent_coef: 0.0
+  vf_coef: 0.5
+  max_grad_norm: 0.5

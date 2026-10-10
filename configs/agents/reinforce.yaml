@@ -1,0 +1,12 @@
+agent:
+  name: reinforce
+  hidden_sizes: [64, 64]
+  activation: tanh
+  gamma: 0.998
+  lr: 0.001
+  baseline: true
+  episodes_per_update: 1
+  normalize_advantages: true
+  ent_coef: 0.0
+  vf_coef: 0.5
+  max_grad_norm: 0.5

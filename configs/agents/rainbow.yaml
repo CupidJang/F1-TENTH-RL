@@ -1,0 +1,26 @@
+agent:
+  name: dqn
+  double: true
+  dueling: true
+  noisy: true
+  noisy_std: 0.5
+  distributional: c51
+  num_atoms: 51
+  v_min: -20.0
+  v_max: 40.0
+  n_step: 3
+  hidden_sizes: [256, 256]
+  gamma: 0.998
+  lr: 0.0001
+  batch_size: 64
+  learning_starts: 5000
+  train_freq: 4
+  target_update_interval: 1250
+  max_grad_norm: 10.0
+  buffer:
+    capacity: 1000000
+    prioritized: true
+    alpha: 0.5
+    beta_start: 0.4
+    beta_end: 1.0
+    beta_steps: 2000000
